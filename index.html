@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOERMADE</title>
+  <meta name="description" content="DOERMADE helps people become Doers — building, repairing, maintaining, reusing, repurposing and creating." />
+  <style>
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --line:#d9d9d9;
+      --soft:#f6f6f4;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.55;
+    }
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+    header{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .nav{
+      min-height:92px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand img{width:150px;display:block}
+    nav a{
+      text-decoration:none;
+      color:#222;
+      margin-left:24px;
+      font-size:14px;
+    }
+    .hero{
+      padding:92px 0 74px;
+    }
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(46px,7vw,86px);
+      line-height:.98;
+      margin:0 0 26px;
+      max-width:900px;
+      letter-spacing:-.04em;
+    }
+    .lead{
+      font-size:22px;
+      max-width:760px;
+      color:#333;
+      margin-bottom:34px;
+    }
+    .cta{
+      display:inline-block;
+      padding:14px 20px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid #111;
+      margin-right:10px;
+    }
+    .cta.secondary{
+      background:#fff;
+      color:#111;
+    }
+    section{padding:70px 0;border-top:1px solid var(--line)}
+    .section-title{
+      font-size:34px;
+      margin:0 0 26px;
+      letter-spacing:-.02em;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+    .card{
+      background:var(--soft);
+      padding:28px;
+      min-height:210px;
+    }
+    .card h3{margin:0 0 12px;font-size:20px}
+    .card p{margin:0;color:#444}
+    .statement{
+      font-size:32px;
+      line-height:1.25;
+      max-width:920px;
+      margin:0;
+    }
+    .standard{
+      font-size:25px;
+      font-weight:700;
+      line-height:1.45;
+      margin-top:26px;
+    }
+    .small{color:var(--muted);font-size:14px}
+    footer{
+      border-top:1px solid var(--line);
+      padding:34px 0 48px;
+      font-size:14px;
+      color:#555;
+    }
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+    @media(max-width:800px){
+      .nav{align-items:flex-start;flex-direction:column;padding:18px 0}
+      nav a{margin:0 18px 0 0}
+      .hero{padding:64px 0 54px}
+      .grid{grid-template-columns:1fr}
+      .statement{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="doermade-logo.png" alt="DOERMADE logo"></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#purpose">Purpose</a>
+      <a href="#impact">Impact</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="eyebrow">Build • Repair • Reuse • Create</div>
+    <h1>Create more Doers.</h1>
+    <p class="lead">
+      DOERMADE helps people find the products, knowledge and practical solutions they need to build, repair, maintain, reuse, repurpose and create.
+    </p>
+    <a class="cta" href="#about">What we're building</a>
+    <a class="cta secondary" href="#contact">Contact DOERMADE</a>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="section-title">What is DOERMADE?</h2>
+      <p class="statement">
+        DOERMADE is an Indiana-based retail and commerce company built around a simple idea: make doing easier.
+      </p>
+      <div class="grid" style="margin-top:36px">
+        <div class="card">
+          <h3>Useful Products</h3>
+          <p>Individual products, supplies and components selected for real-world use.</p>
+        </div>
+        <div class="card">
+          <h3>Practical Solutions</h3>
+          <p>Complementary products organized together when doing so makes the job simpler, faster or more reliable.</p>
+        </div>
+        <div class="card">
+          <h3>Knowledge</h3>
+          <p>Clear guidance that helps customers understand what they need and how to put it to work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="purpose">
+    <div class="wrap">
+      <h2 class="section-title">Our Purpose</h2>
+      <p class="statement">
+        To help more people become Doers — people with the confidence and resources to accomplish more themselves.
+      </p>
+
+      <div class="grid" style="margin-top:36px">
+        <div class="card">
+          <h3>Mission</h3>
+          <p>Make useful products, practical solutions and know-how easier to access while helping extend the useful life of the things people already own.</p>
+        </div>
+        <div class="card">
+          <h3>Vision</h3>
+          <p>Build a trusted, scalable and financially strong company that creates value for customers and measurable good for communities and the environment.</p>
+        </div>
+        <div class="card">
+          <h3>Business Philosophy</h3>
+          <p>Start lean, prove demand, build wealth responsibly and use success to fund work that leaves something better.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="wrap">
+      <h2 class="section-title">Use More. Waste Less.</h2>
+      <p class="statement">
+        Before something becomes waste, we believe there should be a better question: can it still be maintained, repaired, reused, repurposed or recovered?
+      </p>
+      <p class="standard">
+        Maintain → Repair → Reuse → Repurpose → Recycle → Dispose only when necessary
+      </p>
+      <p class="small" style="margin-top:22px">
+        One early impact area under consideration is measurable landfill reduction. DOERMADE intends to develop specific, trackable impact goals as the business grows.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Where we're headed</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Retail</h3>
+          <p>Products, supplies and organized solutions across practical categories.</p>
+        </div>
+        <div class="card">
+          <h3>Reuse & Refurbishment</h3>
+          <p>Future programs designed to keep useful products and materials in circulation longer.</p>
+        </div>
+        <div class="card">
+          <h3>B2B Services</h3>
+          <p>Future kitting, packaging, wholesale, fulfillment and lifecycle support opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>DOERMADE LLC</strong><br>
+      1222 Liberty St.<br>
+      Covington, IN 47932
+    </div>
+    <div>
+      <strong>Contact</strong><br>
+      ghoaks@doermade.com
+    </div>
+    <div>
+      <strong>Working Company Site</strong><br>
+      Website launch pending
+    </div>
+  </div>
+</footer>
+</body>
+</html>
