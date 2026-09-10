@@ -3,365 +3,705 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DOERMADE</title>
-  <meta name="description" content="DOERMADE helps people become Doers — building, repairing, maintaining, reusing, repurposing and creating." />
+  <title>DOERMADE | Create More Doers</title>
+  <meta name="description" content="DOERMADE helps people become Doers with useful products, practical solutions and clear know-how for building, repairing, maintaining, reusing and creating." />
   <style>
     :root{
-      --pine:#123b2a;
-      --forest:#1d5038;
-      --moss:#4f755d;
-      --sage:#dce7dd;
-      --mist:#edf3ed;
-      --cream:#f7f5ef;
-      --paper:#fffefa;
-      --ink:#17211b;
-      --muted:#667169;
-      --line:#d7dfd8;
+      --evergreen:#0d3325;
+      --forest:#164b35;
+      --leaf:#2f6a4c;
+      --sage:#dce8df;
+      --mist:#eef4ef;
+      --cream:#f5f2e9;
+      --paper:#fffdf8;
+      --ink:#172019;
+      --text:#344139;
+      --muted:#68736b;
+      --line:#d6ded7;
       --white:#ffffff;
-      --max:1160px;
-      --radius:16px;
-      --shadow:0 18px 48px rgba(18,59,42,.075);
+      --max:1180px;
+      --radius-lg:28px;
+      --radius-md:18px;
+      --radius-sm:10px;
+      --shadow:0 24px 70px rgba(13,51,37,.10);
+      --shadow-soft:0 14px 38px rgba(13,51,37,.07);
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Arial, Helvetica, sans-serif;
+      font-family:"Aptos","Segoe UI",Arial,Helvetica,sans-serif;
       color:var(--ink);
       background:var(--cream);
       line-height:1.6;
       -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 30px}
+    a{color:inherit}
+    img{max-width:100%}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+
+    .topline{
+      background:var(--evergreen);
+      color:#dbe8df;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .topline .wrap{
+      min-height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .topline span:last-child{color:#9fb9a8}
 
     header{
       position:sticky;
       top:0;
-      z-index:20;
-      border-bottom:1px solid rgba(18,59,42,.12);
-      background:rgba(247,245,239,.94);
-      backdrop-filter:blur(12px);
+      z-index:30;
+      border-bottom:1px solid rgba(13,51,37,.10);
+      background:rgba(245,242,233,.92);
+      backdrop-filter:blur(16px);
     }
-
     .nav{
-      min-height:92px;
+      min-height:86px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:28px;
+      gap:32px;
     }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      padding:8px 0;
-    }
-
-    .brand img{width:158px;display:block}
-
-    nav{display:flex;align-items:center;gap:6px}
+    .brand{display:flex;align-items:center;text-decoration:none}
+    .brand img{width:162px;display:block}
+    nav{display:flex;align-items:center;gap:4px}
     nav a{
       text-decoration:none;
-      color:var(--pine);
+      color:var(--evergreen);
       padding:10px 13px;
       border-radius:999px;
       font-size:13px;
       font-weight:800;
-      letter-spacing:.02em;
-      transition:.2s ease;
+      transition:.18s ease;
     }
-    nav a:hover{background:var(--sage);color:var(--pine)}
+    nav a:hover{background:rgba(22,75,53,.08)}
+    .nav-contact{
+      border:1px solid rgba(13,51,37,.2);
+      margin-left:6px;
+    }
 
     .hero-shell{
       position:relative;
       overflow:hidden;
       background:
-        radial-gradient(circle at 86% 18%, rgba(79,117,93,.17) 0, rgba(79,117,93,0) 27%),
-        linear-gradient(135deg,var(--mist) 0%,var(--cream) 64%);
+        radial-gradient(circle at 78% 12%, rgba(47,106,76,.18) 0, rgba(47,106,76,0) 25%),
+        linear-gradient(135deg,#edf3ed 0%,#f7f4ec 52%,#f0ece0 100%);
       border-bottom:1px solid var(--line);
     }
-
+    .hero-shell:before{
+      content:"";
+      position:absolute;
+      width:720px;
+      height:720px;
+      border:1px solid rgba(13,51,37,.08);
+      border-radius:50%;
+      right:-300px;
+      top:-330px;
+    }
     .hero-shell:after{
       content:"DOER";
       position:absolute;
-      right:-30px;
-      bottom:-105px;
-      font-size:260px;
+      right:-40px;
+      bottom:-125px;
+      font-size:300px;
       line-height:1;
       font-weight:900;
-      letter-spacing:-.08em;
-      color:rgba(18,59,42,.035);
+      letter-spacing:-.09em;
+      color:rgba(13,51,37,.035);
       pointer-events:none;
       user-select:none;
     }
-
     .hero{
       position:relative;
-      z-index:1;
-      padding:118px 0 104px;
-      max-width:970px;
+      z-index:2;
+      min-height:680px;
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(320px,.75fr);
+      align-items:center;
+      gap:72px;
+      padding:96px 0 104px;
     }
-
-    .eyebrow,
-    .section-kicker{
+    .hero-copy{max-width:760px}
+    .eyebrow,.section-kicker{
       text-transform:uppercase;
-      letter-spacing:.19em;
+      letter-spacing:.2em;
       font-size:11px;
       font-weight:900;
-      color:var(--moss);
+      color:var(--leaf);
     }
-
     .eyebrow{
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      margin-bottom:24px;
+      gap:11px;
+      margin-bottom:23px;
     }
-
     .eyebrow:before{
       content:"";
-      width:34px;
+      width:38px;
       height:2px;
       background:var(--forest);
     }
-
     h1{
-      font-size:clamp(58px,7.5vw,98px);
-      line-height:.92;
+      font-size:clamp(64px,8vw,110px);
+      line-height:.88;
       margin:0 0 30px;
-      max-width:900px;
-      letter-spacing:-.055em;
-      color:var(--pine);
+      letter-spacing:-.065em;
+      color:var(--evergreen);
+      max-width:760px;
     }
-
     .lead{
-      font-size:22px;
-      line-height:1.55;
-      max-width:790px;
-      color:#38463d;
+      font-size:23px;
+      line-height:1.48;
+      max-width:720px;
+      color:#35433a;
       margin:0 0 38px;
     }
-
+    .lead strong{color:var(--evergreen)}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:50px;
-      padding:0 22px;
-      border-radius:8px;
-      background:var(--pine);
+      min-height:52px;
+      padding:0 23px;
+      border-radius:var(--radius-sm);
+      background:var(--evergreen);
       color:var(--white);
       text-decoration:none;
       font-size:14px;
-      font-weight:800;
-      border:1px solid var(--pine);
-      transition:.2s ease;
+      font-weight:850;
+      border:1px solid var(--evergreen);
+      transition:.18s ease;
     }
-    .cta:hover{transform:translateY(-2px);background:var(--forest);box-shadow:0 8px 20px rgba(18,59,42,.15)}
-    .cta.secondary{background:transparent;color:var(--pine);border-color:rgba(18,59,42,.35)}
+    .cta:hover{transform:translateY(-2px);background:var(--forest);box-shadow:0 10px 26px rgba(13,51,37,.17)}
+    .cta.secondary{background:rgba(255,255,255,.42);color:var(--evergreen);border-color:rgba(13,51,37,.24)}
     .cta.secondary:hover{background:var(--white)}
 
-    section{padding:88px 0;border-top:1px solid var(--line)}
-    section:first-of-type{border-top:0}
-
-    .section-kicker{margin-bottom:12px}
-    .section-title{
-      font-size:clamp(34px,4vw,44px);
-      line-height:1.08;
-      margin:0 0 28px;
-      letter-spacing:-.035em;
-      color:var(--pine);
-    }
-
-    .statement{
-      font-size:clamp(24px,3vw,31px);
-      line-height:1.35;
-      max-width:920px;
-      margin:0;
-      color:#28372d;
-      letter-spacing:-.012em;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-      margin-top:44px;
-    }
-
-    .card{
+    .hero-panel{
       position:relative;
-      overflow:hidden;
+      background:rgba(255,253,248,.78);
+      border:1px solid rgba(13,51,37,.14);
+      border-radius:var(--radius-lg);
+      padding:34px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+    .hero-panel-label{
+      color:var(--leaf);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:10px;
+      font-weight:900;
+      margin-bottom:24px;
+    }
+    .hero-panel h2{
+      margin:0 0 10px;
+      color:var(--evergreen);
+      font-size:27px;
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+    .hero-panel > p{margin:0 0 24px;color:var(--text);font-size:15px}
+    .path{display:grid;gap:0;border-top:1px solid var(--line)}
+    .path-row{
+      display:grid;
+      grid-template-columns:30px 1fr;
+      align-items:center;
+      gap:12px;
+      padding:13px 0;
+      border-bottom:1px solid var(--line);
+      color:#334139;
+      font-size:14px;
+      font-weight:750;
+    }
+    .path-num{
+      width:27px;
+      height:27px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:var(--sage);
+      color:var(--evergreen);
+      font-size:11px;
+      font-weight:900;
+    }
+
+    section{padding:104px 0;border-top:1px solid var(--line)}
+    .section-kicker{margin-bottom:14px}
+    .section-title{
+      font-size:clamp(38px,5vw,58px);
+      line-height:1;
+      margin:0 0 28px;
+      letter-spacing:-.045em;
+      color:var(--evergreen);
+    }
+    .section-intro{
+      font-size:clamp(22px,2.7vw,30px);
+      line-height:1.4;
+      max-width:900px;
+      margin:0;
+      color:#2d3a31;
+      letter-spacing:-.02em;
+    }
+
+    .about-layout{
+      display:grid;
+      grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+      gap:86px;
+      align-items:start;
+    }
+    .about-copy p{
+      font-size:17px;
+      color:var(--text);
+      margin:0 0 18px;
+      max-width:520px;
+    }
+    .about-copy .section-intro{margin-bottom:28px}
+    .pillars{display:grid;gap:14px}
+    .pillar{
       background:var(--paper);
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:32px 30px 34px;
-      min-height:218px;
-      box-shadow:var(--shadow);
-      transition:.2s ease;
+      border-radius:var(--radius-md);
+      padding:26px 28px;
+      box-shadow:var(--shadow-soft);
+      display:grid;
+      grid-template-columns:48px 1fr;
+      gap:18px;
+      align-items:start;
     }
-    .card:before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:4px;
-      background:var(--forest);
-      opacity:.85;
+    .pillar-icon{
+      width:48px;height:48px;border-radius:14px;background:var(--mist);
+      display:grid;place-items:center;color:var(--forest);font-weight:900;font-size:18px;
+      border:1px solid #d8e5db;
     }
-    .card:hover{transform:translateY(-3px);box-shadow:0 22px 55px rgba(18,59,42,.11)}
-    .card h3{margin:0 0 13px;font-size:20px;color:var(--pine);letter-spacing:-.015em}
-    .card p{margin:0;color:#4d5951}
+    .pillar h3{margin:1px 0 7px;font-size:19px;color:var(--evergreen);letter-spacing:-.02em}
+    .pillar p{margin:0;color:#536058;font-size:15px;line-height:1.55}
 
     #purpose{background:var(--mist)}
+    .purpose-head{max-width:920px;margin-bottom:52px}
+    .purpose-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:22px;
+    }
+    .purpose-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:38px;
+      box-shadow:var(--shadow-soft);
+    }
+    .purpose-card.large{grid-row:span 2;padding:46px}
+    .purpose-card .number{
+      color:#93aa99;
+      font-size:12px;
+      letter-spacing:.15em;
+      font-weight:900;
+      margin-bottom:30px;
+    }
+    .purpose-card h3{
+      margin:0 0 14px;
+      color:var(--evergreen);
+      font-size:26px;
+      letter-spacing:-.03em;
+    }
+    .purpose-card.large h3{font-size:36px}
+    .purpose-card p{margin:0;color:#4c5a51;font-size:16px}
+    .purpose-card.large p{font-size:20px;line-height:1.5;color:#334138}
 
     .impact{
       position:relative;
       overflow:hidden;
-      background:var(--pine);
+      background:var(--evergreen);
       color:var(--white);
       border-top:0;
+      padding:112px 0 118px;
+    }
+    .impact:before{
+      content:"";
+      position:absolute;
+      width:560px;height:560px;border:1px solid rgba(255,255,255,.08);border-radius:50%;
+      right:-170px;top:-240px;
     }
     .impact:after{
       content:"";
       position:absolute;
-      width:420px;
-      height:420px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:50%;
-      right:-150px;
-      top:-180px;
+      width:330px;height:330px;border:1px solid rgba(255,255,255,.06);border-radius:50%;
+      right:-60px;top:-130px;
     }
     .impact .wrap{position:relative;z-index:1}
-    .impact .section-kicker{color:#bcd0c1}
-    .impact .section-title,.impact .statement,.impact .small{color:var(--white)}
-    .impact .statement{max-width:960px}
-
-    .standard{
-      display:inline-block;
-      margin:34px 0 0;
-      padding:18px 22px;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:10px;
-      background:rgba(255,255,255,.055);
-      font-size:20px;
-      font-weight:800;
-      line-height:1.6;
-      color:#e6f0e8;
+    .impact .section-kicker{color:#a9c2b1}
+    .impact .section-title{color:var(--white);max-width:760px}
+    .impact .section-intro{color:#d9e6dd;max-width:880px}
+    .standard-line{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      margin-top:54px;
+      border-top:1px solid rgba(255,255,255,.16);
+      border-bottom:1px solid rgba(255,255,255,.16);
     }
+    .standard-step{
+      min-height:128px;
+      padding:24px 18px;
+      border-right:1px solid rgba(255,255,255,.12);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:22px;
+    }
+    .standard-step:last-child{border-right:0}
+    .standard-step span{font-size:11px;color:#8fb09b;font-weight:900;letter-spacing:.12em}
+    .standard-step strong{font-size:16px;color:#fff}
+    .impact-note{margin:30px 0 0;max-width:790px;color:#aec3b4;font-size:14px}
 
-    .small{color:var(--muted);font-size:14px;max-width:820px}
+    #direction{background:var(--cream)}
+    .direction-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:50px;
+      margin-bottom:48px;
+    }
+    .direction-head .section-title{margin-bottom:0}
+    .direction-note{max-width:430px;color:var(--muted);font-size:15px;margin:0}
+    .direction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .direction-card{
+      position:relative;
+      min-height:300px;
+      padding:34px;
+      border-radius:var(--radius-lg);
+      background:var(--paper);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+    }
+    .direction-card:after{
+      content:attr(data-step);
+      position:absolute;
+      right:18px;
+      bottom:-22px;
+      font-size:118px;
+      font-weight:900;
+      line-height:1;
+      letter-spacing:-.08em;
+      color:rgba(13,51,37,.045);
+    }
+    .direction-card small{
+      display:block;
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      color:var(--leaf);
+      font-weight:900;
+      font-size:10px;
+      margin-bottom:38px;
+    }
+    .direction-card h3{margin:0 0 14px;font-size:25px;color:var(--evergreen);letter-spacing:-.03em}
+    .direction-card p{margin:0;color:#526058;font-size:15px;max-width:300px}
+
+    .contact-band{
+      background:#e3ece4;
+      border-top:1px solid #cedbcf;
+      padding:66px 0;
+    }
+    .contact-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+    }
+    .contact-inner h2{margin:0 0 8px;font-size:34px;color:var(--evergreen);letter-spacing:-.035em}
+    .contact-inner p{margin:0;color:#526057}
 
     footer{
-      background:#0d2c1f;
-      color:#cddbd1;
-      padding:48px 0 56px;
-      border-top:5px solid var(--moss);
+      background:#08281c;
+      color:#bdd0c3;
+      padding:58px 0 62px;
     }
-    .footer-grid{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap}
-    footer strong{color:#fff;letter-spacing:.02em}
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.45fr .8fr .8fr;
+      gap:48px;
+      align-items:start;
+    }
+    .footer-brand img{
+      width:150px;
+      filter:invert(1);
+      opacity:.94;
+      margin-bottom:18px;
+    }
+    .footer-brand p{max-width:420px;margin:0;color:#9eb3a5;font-size:14px}
+    .footer-label{
+      color:#7f9a88;
+      text-transform:uppercase;
+      font-size:10px;
+      letter-spacing:.17em;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    footer strong{color:#fff}
+    footer a{text-decoration:none;color:#d5e3d9}
+    footer a:hover{text-decoration:underline}
+    .footer-copy{
+      margin-top:44px;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.09);
+      color:#789181;
+      font-size:12px;
+    }
 
-    @media(max-width:800px){
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr;gap:44px;min-height:auto}
+      .hero-copy{max-width:850px}
+      .hero-panel{max-width:620px}
+      .about-layout{grid-template-columns:1fr;gap:48px}
+      .about-copy p{max-width:760px}
+      .purpose-grid{grid-template-columns:1fr}
+      .purpose-card.large{grid-row:auto}
+      .standard-line{grid-template-columns:repeat(3,1fr)}
+      .standard-step:nth-child(3){border-right:0}
+      .standard-step:nth-child(-n+3){border-bottom:1px solid rgba(255,255,255,.12)}
+      .direction-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1.3fr 1fr}
+    }
+
+    @media(max-width:720px){
       .wrap{padding:0 22px}
-      .nav{min-height:auto;align-items:flex-start;flex-direction:column;padding:15px 0 16px;gap:8px}
-      .brand img{width:142px}
+      .topline{display:none}
+      .nav{min-height:auto;align-items:flex-start;flex-direction:column;padding:15px 0 14px;gap:9px}
+      .brand img{width:145px}
       nav{width:100%;gap:0;flex-wrap:wrap}
-      nav a{padding:8px 11px 8px 0;margin-right:12px}
-      .hero{padding:74px 0 68px}
-      .hero-shell:after{font-size:150px;bottom:-55px}
+      nav a{padding:7px 10px 7px 0;margin-right:10px}
+      .nav-contact{border:0;margin-left:0}
+      .hero{padding:72px 0 74px;gap:38px}
+      .hero-shell:after{font-size:165px;bottom:-60px}
+      h1{font-size:clamp(58px,18vw,78px)}
       .lead{font-size:19px}
-      section{padding:68px 0}
-      .grid{grid-template-columns:1fr;margin-top:34px}
-      .card{min-height:auto}
-      .standard{font-size:17px}
+      .hero-panel{padding:28px;border-radius:22px}
+      section{padding:76px 0}
+      .section-title{font-size:42px}
+      .section-intro{font-size:22px}
+      .pillar{grid-template-columns:42px 1fr;padding:22px}
+      .pillar-icon{width:42px;height:42px}
+      .purpose-head{margin-bottom:34px}
+      .purpose-card,.purpose-card.large{padding:28px}
+      .purpose-card.large h3{font-size:30px}
+      .purpose-card.large p{font-size:18px}
+      .impact{padding:80px 0}
+      .standard-line{grid-template-columns:1fr 1fr}
+      .standard-step{min-height:108px}
+      .standard-step:nth-child(2),.standard-step:nth-child(4){border-right:0}
+      .standard-step:nth-child(3){border-right:1px solid rgba(255,255,255,.12)}
+      .standard-step:nth-child(-n+4){border-bottom:1px solid rgba(255,255,255,.12)}
+      .direction-head{align-items:start;flex-direction:column;gap:18px}
+      .direction-grid{grid-template-columns:1fr}
+      .direction-card{min-height:250px}
+      .contact-inner{align-items:flex-start;flex-direction:column}
+      .footer-grid{grid-template-columns:1fr;gap:30px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{transition:none!important}
     }
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#top"><img src="doermade-logo.png" alt="DOERMADE logo"></a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#purpose">Purpose</a>
-      <a href="#impact">Impact</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-  <div class="hero-shell">
-    <div class="wrap hero">
-      <div class="eyebrow">Build • Repair • Reuse • Create</div>
-      <h1>Create more Doers.</h1>
-      <p class="lead">DOERMADE helps people find useful products, practical solutions and know-how so they can build, repair, maintain, reuse, repurpose and create with confidence.</p>
-      <div class="actions">
-        <a class="cta" href="#about">What we're building</a>
-        <a class="cta secondary" href="#contact">Contact DOERMADE</a>
-      </div>
+  <div class="topline">
+    <div class="wrap">
+      <span>Built for people who do.</span>
+      <span>Indiana • USA</span>
     </div>
   </div>
 
-  <section id="about">
-    <div class="wrap">
-      <div class="section-kicker">About DOERMADE</div>
-      <h2 class="section-title">Make doing easier.</h2>
-      <p class="statement">DOERMADE is an Indiana-based retail and commerce company built around a simple idea: give people better access to the products, solutions and knowledge that help them accomplish more themselves.</p>
-      <div class="grid">
-        <div class="card"><h3>Useful Products</h3><p>Individual products, supplies and components selected for real-world use.</p></div>
-        <div class="card"><h3>Practical Solutions</h3><p>Complementary products organized together when doing so makes a project simpler, faster or more reliable.</p></div>
-        <div class="card"><h3>Useful Knowledge</h3><p>Clear guidance that helps customers understand what they need and how to put it to work.</p></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="DOERMADE home"><img src="doermade-logo.png" alt="DOERMADE logo"></a>
+      <nav aria-label="Primary navigation">
+        <a href="#about">What we do</a>
+        <a href="#purpose">Why we exist</a>
+        <a href="#impact">Our standard</a>
+        <a href="#direction">Direction</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero-shell">
+      <div class="wrap hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Products • Solutions • Know-how</div>
+          <h1>Create more Doers.</h1>
+          <p class="lead"><strong>DOERMADE makes doing easier.</strong> We bring together useful products, practical solutions and clear know-how so people can build, fix, maintain, reuse and create with confidence.</p>
+          <div class="actions">
+            <a class="cta" href="#about">Discover DOERMADE</a>
+            <a class="cta secondary" href="#purpose">Why we exist</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="The DOERMADE approach">
+          <div class="hero-panel-label">The DOERMADE approach</div>
+          <h2>Use what works. Keep it working.</h2>
+          <p>Good solutions should make the next step clearer, not more complicated.</p>
+          <div class="path">
+            <div class="path-row"><span class="path-num">01</span><span>Find the right product</span></div>
+            <div class="path-row"><span class="path-num">02</span><span>Understand how to use it</span></div>
+            <div class="path-row"><span class="path-num">03</span><span>Make, fix or maintain</span></div>
+            <div class="path-row"><span class="path-num">04</span><span>Keep useful things in use</span></div>
+          </div>
+        </aside>
       </div>
     </div>
-  </section>
 
-  <section id="purpose">
-    <div class="wrap">
-      <div class="section-kicker">Why we exist</div>
-      <h2 class="section-title">Our Purpose</h2>
-      <p class="statement">Help more people become Doers — people with the confidence and resources to build, fix, maintain, reuse and create.</p>
-      <div class="grid">
-        <div class="card"><h3>Mission</h3><p>Make useful products, practical solutions and know-how easier to access while helping extend the useful life of the things people already own.</p></div>
-        <div class="card"><h3>Vision</h3><p>Build a trusted, scalable and financially strong company that creates value for customers and measurable good for communities and the environment.</p></div>
-        <div class="card"><h3>Business Philosophy</h3><p>Start lean, prove demand, build wealth responsibly and use success to fund work that leaves something better.</p></div>
+    <section id="about">
+      <div class="wrap about-layout">
+        <div class="about-copy">
+          <div class="section-kicker">What DOERMADE is</div>
+          <h2 class="section-title">A company built around capability.</h2>
+          <p class="section-intro">We believe people do more when the right product, the right information and the right solution meet at the right time.</p>
+          <p>DOERMADE is an Indiana-based company being built to make practical products and solutions easier to find, understand and put to work.</p>
+          <p>Sometimes that means a single useful item. Sometimes it means complementary products organized into a better solution. The goal is the same: remove friction between a person and the thing they are trying to accomplish.</p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar-icon">P</div>
+            <div><h3>Useful products</h3><p>Practical items, materials and components chosen for real-world use—not shelf filler.</p></div>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon">S</div>
+            <div><h3>Better solutions</h3><p>Products organized together when doing so makes a job simpler, faster, clearer or more reliable.</p></div>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon">K</div>
+            <div><h3>Clear know-how</h3><p>Useful guidance that helps people understand what they need, why it matters and how to put it to work.</p></div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="impact" class="impact">
-    <div class="wrap">
-      <div class="section-kicker">The DOERMADE standard</div>
-      <h2 class="section-title">Use more. Waste less.</h2>
-      <p class="statement">Before something becomes waste, there should be a better question: can it still be maintained, repaired, reused, repurposed or recovered?</p>
-      <p class="standard">Maintain → Repair → Reuse → Repurpose → Recycle → Dispose only when necessary</p>
-      <p class="small" style="margin-top:24px">One early impact area under consideration is measurable landfill reduction. DOERMADE intends to develop specific, trackable impact goals as the business grows.</p>
-    </div>
-  </section>
+    <section id="purpose">
+      <div class="wrap">
+        <div class="purpose-head">
+          <div class="section-kicker">Why we exist</div>
+          <h2 class="section-title">Build a strong company. Use it to make things better.</h2>
+          <p class="section-intro">DOERMADE is being built as a commercial business with a purpose beyond the transaction.</p>
+        </div>
 
-  <section>
-    <div class="wrap">
-      <div class="section-kicker">Future direction</div>
-      <h2 class="section-title">Where we're headed</h2>
-      <div class="grid">
-        <div class="card"><h3>Retail</h3><p>Products, supplies and organized solutions across practical categories.</p></div>
-        <div class="card"><h3>Reuse & Refurbishment</h3><p>Future programs designed to keep useful products and materials in circulation longer.</p></div>
-        <div class="card"><h3>B2B Services</h3><p>Future kitting, packaging, wholesale, fulfillment and lifecycle support opportunities.</p></div>
+        <div class="purpose-grid">
+          <article class="purpose-card large">
+            <div class="number">01 / PURPOSE</div>
+            <h3>Create more Doers.</h3>
+            <p>Help more people gain the products, knowledge and confidence to build, repair, maintain, reuse, repurpose and create for themselves.</p>
+          </article>
+          <article class="purpose-card">
+            <div class="number">02 / MISSION</div>
+            <h3>Make doing easier.</h3>
+            <p>Connect people with useful products, practical solutions and know-how that help them accomplish more and extend the useful life of what they already own.</p>
+          </article>
+          <article class="purpose-card">
+            <div class="number">03 / VISION</div>
+            <h3>Build value that compounds.</h3>
+            <p>Grow a trusted, scalable and financially strong company that creates value for customers and measurable good for communities and the environment.</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer id="contact">
-  <div class="wrap footer-grid">
-    <div><strong>DOERMADE LLC</strong><br>1222 Liberty St.<br>Covington, IN 47932</div>
-    <div><strong>Contact</strong><br>ghoaks@doermade.com</div>
-    <div><strong>Working Company Site</strong><br>Website launch pending</div>
-  </div>
-</footer>
+    <section id="impact" class="impact">
+      <div class="wrap">
+        <div class="section-kicker">The DOERMADE standard</div>
+        <h2 class="section-title">Before something becomes waste, ask what it can become next.</h2>
+        <p class="section-intro">The best outcome is not always replacement. We favor keeping useful products, materials and skills in circulation for as long as they still create value.</p>
+
+        <div class="standard-line" aria-label="DOERMADE use hierarchy">
+          <div class="standard-step"><span>01</span><strong>Maintain</strong></div>
+          <div class="standard-step"><span>02</span><strong>Repair</strong></div>
+          <div class="standard-step"><span>03</span><strong>Reuse</strong></div>
+          <div class="standard-step"><span>04</span><strong>Repurpose</strong></div>
+          <div class="standard-step"><span>05</span><strong>Recycle</strong></div>
+          <div class="standard-step"><span>06</span><strong>Dispose only when necessary</strong></div>
+        </div>
+
+        <p class="impact-note">As the business grows, DOERMADE intends to turn this standard into measurable action. Landfill reduction is one early impact area under consideration, with specific goals to be defined as operations develop.</p>
+      </div>
+    </section>
+
+    <section id="direction">
+      <div class="wrap">
+        <div class="direction-head">
+          <div>
+            <div class="section-kicker">Where we're headed</div>
+            <h2 class="section-title">Start focused. Build deliberately.</h2>
+          </div>
+          <p class="direction-note">DOERMADE is being developed in stages. Each expansion should earn its place by solving a real problem and creating measurable value.</p>
+        </div>
+
+        <div class="direction-grid">
+          <article class="direction-card" data-step="1">
+            <small>Now</small>
+            <h3>Retail & practical solutions</h3>
+            <p>Useful products, supplies and organized solutions across practical categories, tested with real customers and disciplined capital.</p>
+          </article>
+          <article class="direction-card" data-step="2">
+            <small>Next</small>
+            <h3>Reuse & refurbishment</h3>
+            <p>Programs and products designed to keep useful items and materials in circulation longer instead of replacing them prematurely.</p>
+          </article>
+          <article class="direction-card" data-step="3">
+            <small>Future</small>
+            <h3>B2B services</h3>
+            <p>Kitting, packaging, wholesale, fulfillment and lifecycle support built on the same practical operating philosophy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-band">
+      <div class="wrap contact-inner">
+        <div>
+          <h2>DOERMADE is getting to work.</h2>
+          <p>For company, supplier or business inquiries, contact us directly.</p>
+        </div>
+        <a class="cta" href="mailto:ghoaks@doermade.com">ghoaks@doermade.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="doermade-logo.png" alt="DOERMADE">
+          <p>Useful products. Practical solutions. Clear know-how. Built to help more people become Doers.</p>
+        </div>
+        <div>
+          <div class="footer-label">Company</div>
+          <strong>DOERMADE LLC</strong><br>
+          1222 Liberty St.<br>
+          Covington, IN 47932
+        </div>
+        <div>
+          <div class="footer-label">Contact</div>
+          <a href="mailto:ghoaks@doermade.com">ghoaks@doermade.com</a><br>
+          Website launch in development
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 DOERMADE LLC. Working company website.</div>
+    </div>
+  </footer>
 </body>
 </html>
