@@ -1,35 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>DOERMADE | Create More Doers</title>
-<meta name="description" content="DOERMADE helps people become Doers with useful products, practical solutions and clear know-how for building, repairing, maintaining, reusing and creating.">
-<style>
-:root{--evergreen:#0d3325;--forest:#164b35;--leaf:#2f6a4c;--sage:#dce8df;--mist:#eef4ef;--cream:#f5f2e9;--paper:#fffdf8;--ink:#172019;--text:#344139;--muted:#68736b;--line:#d6ded7;--white:#fff;--gold:#e3a820;--charcoal:#101713;--max:1180px;--radius-lg:28px;--radius-md:18px;--radius-sm:10px;--shadow:0 24px 70px rgba(13,51,37,.10);--shadow-soft:0 14px 38px rgba(13,51,37,.07)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Aptos","Segoe UI",Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:inherit}img{max-width:100%}.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
-.topline{background:#08110d;color:#b8c7bd;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;border-bottom:1px solid rgba(255,255,255,.06)}.topline .wrap{min-height:32px;display:flex;align-items:center;justify-content:space-between;gap:24px}.topline span:last-child{color:#819388}
-header{position:sticky;top:0;z-index:30;background:rgba(15,22,18,.96);border-bottom:1px solid rgba(255,255,255,.10);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(0,0,0,.12)}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:32px}.brand{display:flex;align-items:center;text-decoration:none;gap:12px}.brand-mark{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.05);overflow:hidden}.brand-mark img{width:38px;display:block;filter:invert(1);opacity:.94}.brand-word{display:flex;align-items:baseline;font-size:25px;line-height:1;font-weight:950;letter-spacing:-.055em}.brand-doer{color:#f5f2e9}.brand-made{color:var(--gold)}nav{display:flex;align-items:center;gap:4px}nav a{text-decoration:none;color:#d9e2dc;padding:10px 13px;border-radius:999px;font-size:13px;font-weight:800;transition:.18s ease}nav a:hover{color:#fff;background:rgba(255,255,255,.08)}.nav-contact{border:1px solid rgba(227,168,32,.62);color:#f2c55a;margin-left:6px}.nav-contact:hover{background:var(--gold);border-color:var(--gold);color:#111713}
-.hero-shell{position:relative;overflow:hidden;min-height:700px;background-image:url('doermade-makerspace-hero.png');background-size:cover;background-position:center center;border-bottom:1px solid rgba(13,51,37,.18);isolation:isolate}.hero-shell:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,18,12,.94) 0%,rgba(5,22,15,.86) 30%,rgba(8,28,19,.55) 58%,rgba(8,28,19,.13) 100%),linear-gradient(0deg,rgba(0,0,0,.18),rgba(0,0,0,.05))}.hero-shell:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.06),transparent 35%,rgba(0,0,0,.18));pointer-events:none}.hero{min-height:700px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.72fr);align-items:center;gap:68px;padding:92px 0 96px}.hero-copy{max-width:720px;text-shadow:0 2px 18px rgba(0,0,0,.28)}.eyebrow,.section-kicker{text-transform:uppercase;letter-spacing:.2em;font-size:11px;font-weight:900;color:var(--leaf)}.eyebrow{display:inline-flex;align-items:center;gap:11px;margin-bottom:23px;color:#f1c85f}.eyebrow:before{content:"";width:38px;height:2px;background:#f1c85f}h1{font-size:clamp(64px,8vw,108px);line-height:.88;margin:0 0 30px;letter-spacing:-.065em;color:#fff;max-width:760px}.lead{font-size:22px;line-height:1.5;max-width:690px;color:#eef3ef;margin:0 0 38px}.lead strong{color:#fff}.actions{display:flex;gap:12px;flex-wrap:wrap}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 23px;border-radius:var(--radius-sm);background:var(--evergreen);color:#fff;text-decoration:none;font-size:14px;font-weight:850;border:1px solid var(--evergreen);transition:.18s ease}.cta:hover{transform:translateY(-2px);background:var(--forest);box-shadow:0 10px 26px rgba(13,51,37,.17)}.hero .cta{background:#fff;color:var(--evergreen);border-color:#fff;text-shadow:none}.hero .cta:hover{background:#f6f1e5}.hero .cta.secondary{background:rgba(7,32,21,.52);color:#fff;border-color:rgba(255,255,255,.42);backdrop-filter:blur(6px)}.hero .cta.secondary:hover{background:rgba(7,32,21,.75)}.hero-panel{position:relative;background:rgba(255,253,248,.88);border:1px solid rgba(255,255,255,.55);border-radius:var(--radius-lg);padding:34px;box-shadow:0 26px 70px rgba(0,0,0,.26);backdrop-filter:blur(14px)}.hero-panel-label{color:var(--leaf);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:900;margin-bottom:24px}.hero-panel h2{margin:0 0 10px;color:var(--evergreen);font-size:27px;line-height:1.08;letter-spacing:-.03em}.hero-panel>p{margin:0 0 24px;color:var(--text);font-size:15px}.path{display:grid;border-top:1px solid var(--line)}.path-row{display:grid;grid-template-columns:30px 1fr;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);color:#334139;font-size:14px;font-weight:750}.path-num{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:var(--sage);color:var(--evergreen);font-size:11px;font-weight:900}
-section{padding:104px 0;border-top:1px solid var(--line)}.section-kicker{margin-bottom:14px}.section-title{font-size:clamp(38px,5vw,58px);line-height:1;margin:0 0 28px;letter-spacing:-.045em;color:var(--evergreen)}.section-intro{font-size:clamp(22px,2.7vw,30px);line-height:1.4;max-width:900px;margin:0;color:#2d3a31;letter-spacing:-.02em}.about-layout{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:86px;align-items:start}.about-copy p{font-size:17px;color:var(--text);margin:0 0 18px;max-width:520px}.about-copy .section-intro{margin-bottom:28px}.pillars{display:grid;gap:14px}.pillar{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 28px;box-shadow:var(--shadow-soft);display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start}.pillar-icon{width:48px;height:48px;border-radius:14px;background:var(--mist);display:grid;place-items:center;color:var(--forest);font-weight:900;font-size:18px;border:1px solid #d8e5db}.pillar h3{margin:1px 0 7px;font-size:19px;color:var(--evergreen);letter-spacing:-.02em}.pillar p{margin:0;color:#536058;font-size:15px;line-height:1.55}
-#purpose{background:var(--mist)}.purpose-head{max-width:920px;margin-bottom:52px}.purpose-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}.purpose-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-lg);padding:38px;box-shadow:var(--shadow-soft)}.purpose-card.large{grid-row:span 2;padding:46px}.purpose-card .number{color:#93aa99;font-size:12px;letter-spacing:.15em;font-weight:900;margin-bottom:30px}.purpose-card h3{margin:0 0 14px;color:var(--evergreen);font-size:26px;letter-spacing:-.03em}.purpose-card.large h3{font-size:36px}.purpose-card p{margin:0;color:#4c5a51;font-size:16px}.purpose-card.large p{font-size:20px;line-height:1.5;color:#334138}
-.impact{position:relative;overflow:hidden;background:var(--evergreen);color:#fff;border-top:0;padding:112px 0 118px}.impact:before{content:"";position:absolute;width:560px;height:560px;border:1px solid rgba(255,255,255,.08);border-radius:50%;right:-170px;top:-240px}.impact:after{content:"";position:absolute;width:330px;height:330px;border:1px solid rgba(255,255,255,.06);border-radius:50%;right:-60px;top:-130px}.impact .wrap{position:relative;z-index:1}.impact .section-kicker{color:#a9c2b1}.impact .section-title{color:#fff;max-width:760px}.impact .section-intro{color:#d9e6dd;max-width:880px}.standard-line{display:grid;grid-template-columns:repeat(6,1fr);margin-top:54px;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}.standard-step{min-height:128px;padding:24px 18px;border-right:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:space-between;gap:22px}.standard-step:last-child{border-right:0}.standard-step span{font-size:11px;color:#8fb09b;font-weight:900;letter-spacing:.12em}.standard-step strong{font-size:16px;color:#fff}.impact-note{margin:30px 0 0;max-width:790px;color:#aec3b4;font-size:14px}
-#direction{background:var(--cream)}.direction-head{display:flex;align-items:end;justify-content:space-between;gap:50px;margin-bottom:48px}.direction-head .section-title{margin-bottom:0}.direction-note{max-width:430px;color:var(--muted);font-size:15px;margin:0}.direction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.direction-card{position:relative;min-height:300px;padding:34px;border-radius:var(--radius-lg);background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden}.direction-card:after{content:attr(data-step);position:absolute;right:18px;bottom:-22px;font-size:118px;font-weight:900;line-height:1;letter-spacing:-.08em;color:rgba(13,51,37,.045)}.direction-card small{display:block;text-transform:uppercase;letter-spacing:.15em;color:var(--leaf);font-weight:900;font-size:10px;margin-bottom:38px}.direction-card h3{margin:0 0 14px;font-size:25px;color:var(--evergreen);letter-spacing:-.03em}.direction-card p{margin:0;color:#526058;font-size:15px;max-width:300px}.contact-band{background:#e3ece4;border-top:1px solid #cedbcf;padding:66px 0}.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}.contact-inner h2{margin:0 0 8px;font-size:34px;color:var(--evergreen);letter-spacing:-.035em}.contact-inner p{margin:0;color:#526057}
-footer{background:#08281c;color:#bdd0c3;padding:58px 0 62px}.footer-grid{display:grid;grid-template-columns:1.45fr .8fr .8fr;gap:48px;align-items:start}.footer-brand img{width:150px;filter:invert(1);opacity:.94;margin-bottom:18px}.footer-brand p{max-width:420px;margin:0;color:#9eb3a5;font-size:14px}.footer-label{color:#7f9a88;text-transform:uppercase;font-size:10px;letter-spacing:.17em;font-weight:900;margin-bottom:10px}footer strong{color:#fff}footer a{text-decoration:none;color:#d5e3d9}footer a:hover{text-decoration:underline}.footer-copy{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.09);color:#789181;font-size:12px}
-@media(max-width:980px){.hero-shell{background-position:62% center}.hero{grid-template-columns:1fr;gap:44px;min-height:auto;padding:84px 0}.hero-copy{max-width:760px}.hero-panel{max-width:620px}.about-layout{grid-template-columns:1fr;gap:48px}.about-copy p{max-width:760px}.purpose-grid{grid-template-columns:1fr}.purpose-card.large{grid-row:auto}.standard-line{grid-template-columns:repeat(3,1fr)}.standard-step:nth-child(3){border-right:0}.standard-step:nth-child(-n+3){border-bottom:1px solid rgba(255,255,255,.12)}.direction-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1.3fr 1fr}}
-@media(max-width:720px){.wrap{padding:0 22px}.topline{display:none}.nav{min-height:auto;align-items:flex-start;flex-direction:column;padding:14px 0 13px;gap:10px}.brand-mark{width:38px;height:38px}.brand-mark img{width:33px}.brand-word{font-size:23px}nav{width:100%;gap:0;flex-wrap:wrap}nav a{padding:7px 10px 7px 0;margin-right:10px}.nav-contact{border:0;margin-left:0;color:#f2c55a}.hero-shell{min-height:auto;background-position:63% center}.hero-shell:before{background:linear-gradient(90deg,rgba(4,18,12,.94),rgba(4,18,12,.75)),linear-gradient(0deg,rgba(0,0,0,.18),rgba(0,0,0,.05))}.hero{padding:70px 0 72px;gap:34px}h1{font-size:clamp(56px,17vw,76px)}.lead{font-size:19px}.hero-panel{padding:28px;border-radius:22px}section{padding:76px 0}.section-title{font-size:42px}.section-intro{font-size:22px}.pillar{grid-template-columns:42px 1fr;padding:22px}.pillar-icon{width:42px;height:42px}.purpose-head{margin-bottom:34px}.purpose-card,.purpose-card.large{padding:28px}.purpose-card.large h3{font-size:30px}.purpose-card.large p{font-size:18px}.impact{padding:80px 0}.standard-line{grid-template-columns:1fr 1fr}.standard-step{min-height:108px}.standard-step:nth-child(2),.standard-step:nth-child(4){border-right:0}.standard-step:nth-child(3){border-right:1px solid rgba(255,255,255,.12)}.standard-step:nth-child(-n+4){border-bottom:1px solid rgba(255,255,255,.12)}.direction-head{align-items:start;flex-direction:column;gap:18px}.direction-grid{grid-template-columns:1fr}.direction-card{min-height:250px}.contact-inner{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr;gap:30px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOERMADE | Create More Doers</title>
+  <meta name="description" content="DOERMADE helps people become Doers with useful products, practical solutions and clear know-how for building, repairing, maintaining, reusing and creating." />
+  <style>
+    :root{
+      --carbon:#111512;
+      --carbon-2:#1a211c;
+      --canvas:#f2ede2;
+      --paper:#fffdf8;
+      --forge:#264f3c;
+      --forge-2:#356a51;
+      --brass:#cfa646;
+      --steel:#6c746e;
+      --mist:#e8ece7;
+      --line:#d7dbd5;
+      --white:#fff;
+      --max:1180px;
+      --shadow:0 24px 70px rgba(17,21,18,.12);
+      --soft-shadow:0 12px 34px rgba(17,21,18,.08);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--canvas);color:var(--carbon);font-family:"Segoe UI",Arial,Helvetica,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+    .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--brass)}
+    .section-title{margin:10px 0 18px;font-size:clamp(38px,5vw,64px);line-height:.98;letter-spacing:-.045em}
+    .section-intro{max-width:760px;margin:0;color:#4c5750;font-size:18px}
+
+    .announcement{background:var(--carbon);color:#b9c1bc;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    .announcement .wrap{min-height:34px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .announcement strong{color:var(--brass)}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(17,21,18,.94);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:34px}
+    .brand{display:flex;align-items:center;text-decoration:none;gap:14px}
+    .brand-badge{width:38px;height:38px;border:1px solid rgba(255,255,255,.16);border-radius:10px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .brand-badge:before,.brand-badge:after{content:"";position:absolute;background:var(--brass);transform:rotate(-45deg)}
+    .brand-badge:before{width:28px;height:5px}
+    .brand-badge:after{width:5px;height:28px}
+    .wordmark{font-size:24px;line-height:1;font-weight:950;letter-spacing:-.055em;color:#fff}
+    .wordmark span{color:var(--brass)}
+    nav{display:flex;align-items:center;gap:2px}
+    nav a{text-decoration:none;color:#dce2de;font-size:13px;font-weight:800;padding:10px 12px;border-radius:999px}
+    nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+    nav .contact{border:1px solid rgba(207,166,70,.5);color:#e8c66d;margin-left:4px}
+
+    .hero{position:relative;min-height:720px;display:flex;align-items:center;overflow:hidden;background:var(--carbon)}
+    .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(12,16,13,.96) 0%,rgba(12,16,13,.87) 34%,rgba(12,16,13,.44) 67%,rgba(12,16,13,.18) 100%),url('doermade-makerspace-hero.png');background-size:cover;background-position:center;filter:saturate(.8) contrast(1.04)}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.24));pointer-events:none}
+    .hero .wrap{position:relative;z-index:2;padding:94px 0 100px}
+    .hero-copy{max-width:780px}
+    .hero h1{margin:14px 0 24px;color:#fff;font-size:clamp(64px,9vw,116px);line-height:.86;letter-spacing:-.07em;max-width:800px}
+    .hero h1 em{font-style:normal;color:var(--brass)}
+    .hero .lead{max-width:700px;color:#edf0ed;font-size:22px;line-height:1.5;margin:0 0 34px}
+    .hero .lead strong{color:#fff}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:900;border:1px solid transparent;transition:.18s ease}
+    .btn.primary{background:var(--brass);color:#171a17}
+    .btn.primary:hover{transform:translateY(-2px);background:#ddb85a}
+    .btn.secondary{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.34);backdrop-filter:blur(8px)}
+    .btn.secondary:hover{background:rgba(255,255,255,.12)}
+    .hero-note{margin-top:28px;color:#aeb9b2;font-size:13px;max-width:640px}
+
+    .routes{margin-top:-54px;position:relative;z-index:5;padding-bottom:78px}
+    .route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .route{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--soft-shadow);text-decoration:none;min-height:250px;display:flex;flex-direction:column;transition:.2s ease}
+    .route:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .route small{display:block;text-transform:uppercase;letter-spacing:.15em;font-size:10px;font-weight:900;color:var(--forge);margin-bottom:36px}
+    .route h2{margin:0 0 10px;font-size:29px;letter-spacing:-.035em;color:var(--carbon)}
+    .route p{margin:0;color:#59645d;font-size:15px;max-width:300px}
+    .route .arrow{margin-top:auto;padding-top:28px;color:var(--brass);font-weight:900;font-size:20px}
+
+    section{padding:100px 0;border-top:1px solid var(--line)}
+    .made-for{background:var(--paper)}
+    .made-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:78px;align-items:start}
+    .made-copy{position:sticky;top:120px}
+    .made-copy p{font-size:17px;color:#56615a;max-width:470px}
+    .disciplines{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .discipline{min-height:190px;padding:24px;border-radius:18px;background:var(--canvas);border:1px solid #ddd7cb;display:flex;flex-direction:column;justify-content:space-between}
+    .discipline span{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:var(--steel)}
+    .discipline strong{font-size:24px;letter-spacing:-.03em;color:var(--forge)}
+    .discipline:nth-child(3n){background:var(--forge);border-color:var(--forge)}
+    .discipline:nth-child(3n) span{color:#a9c1b2}.discipline:nth-child(3n) strong{color:#fff}
+
+    .approach{background:var(--canvas)}
+    .approach-head{display:flex;align-items:end;justify-content:space-between;gap:50px;margin-bottom:44px}
+    .approach-head .section-title{max-width:690px;margin-bottom:0}
+    .approach-head p{max-width:390px;color:#59625d;margin:0}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #c9cec8;border-bottom:1px solid #c9cec8}
+    .process-step{padding:30px 24px 34px;border-right:1px solid #c9cec8;min-height:230px}
+    .process-step:last-child{border-right:0}
+    .process-step b{display:block;color:var(--brass);font-size:12px;letter-spacing:.12em;margin-bottom:42px}
+    .process-step h3{margin:0 0 10px;font-size:21px;color:var(--carbon)}
+    .process-step p{margin:0;color:#5f6962;font-size:14px}
+
+    .learn{background:var(--carbon);color:#fff;border-top:0;position:relative;overflow:hidden}
+    .learn:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.07);border-radius:50%;right:-170px;top:-220px}
+    .learn-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .learn .section-title{color:#fff}
+    .learn .section-intro{color:#c7d0ca}
+    .qr-card{background:#f7f2e8;color:var(--carbon);border-radius:24px;padding:34px;box-shadow:0 26px 70px rgba(0,0,0,.28)}
+    .qr-top{display:flex;justify-content:space-between;gap:24px;align-items:start;margin-bottom:36px}
+    .fake-qr{width:104px;height:104px;border:10px solid var(--carbon);display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;background:#fff}
+    .fake-qr i{background:var(--carbon);display:block}.fake-qr i:nth-child(2),.fake-qr i:nth-child(5),.fake-qr i:nth-child(8),.fake-qr i:nth-child(11),.fake-qr i:nth-child(14){background:#fff}
+    .qr-card small{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:900;color:var(--forge);margin-bottom:6px}
+    .qr-card h3{margin:0;font-size:28px;letter-spacing:-.035em}
+    .qr-card p{color:#59635c}
+    .page-elements{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+    .page-elements span{padding:10px 12px;border:1px solid #d7d9d4;border-radius:8px;font-size:12px;font-weight:800;background:#fff}
+
+    .standard{background:var(--forge);color:#fff;border-top:0}
+    .standard .eyebrow{color:#d8bd75}.standard .section-title{color:#fff}.standard .section-intro{color:#d7e1da}
+    .standard-line{display:grid;grid-template-columns:repeat(6,1fr);margin-top:48px;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+    .standard-step{min-height:128px;padding:22px 18px;border-right:1px solid rgba(255,255,255,.13);display:flex;flex-direction:column;justify-content:space-between}
+    .standard-step:last-child{border-right:0}
+    .standard-step span{color:#9eb9a8;font-size:11px;font-weight:900;letter-spacing:.11em}.standard-step strong{font-size:16px}
+
+    .about{background:var(--paper)}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}
+    .statements{display:grid;gap:14px}
+    .statement{border-top:1px solid var(--line);padding:24px 0}
+    .statement:first-child{border-top:0;padding-top:0}
+    .statement small{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:900;color:var(--forge);margin-bottom:8px}
+    .statement strong{display:block;font-size:23px;line-height:1.3;letter-spacing:-.025em}
+    .statement p{margin:8px 0 0;color:#5b655f}
+
+    .final-cta{padding:80px 0;background:var(--brass);border-top:0}
+    .final-inner{display:flex;align-items:center;justify-content:space-between;gap:50px}
+    .final-inner h2{margin:0;font-size:clamp(40px,5vw,64px);line-height:.95;letter-spacing:-.05em;max-width:760px}
+    .final-inner .btn{background:var(--carbon);color:#fff;white-space:nowrap}
+
+    footer{background:#0a0d0b;color:#aab3ad;padding:58px 0}
+    .footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:44px}
+    .footer-brand .wordmark{font-size:28px;margin-bottom:18px}
+    .footer-brand p{max-width:430px;font-size:14px;margin:0;color:#8f9a93}
+    .footer-label{font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:900;color:#67726b;margin-bottom:10px}
+    footer a{display:block;text-decoration:none;color:#d6ded8;margin:6px 0;font-size:14px}
+    footer a:hover{color:#fff}
+    .copyright{border-top:1px solid rgba(255,255,255,.08);margin-top:42px;padding-top:22px;font-size:12px;color:#68736c}
+
+    @media(max-width:960px){
+      .route-grid{grid-template-columns:1fr}.route{min-height:210px}.made-grid,.learn-grid,.about-grid{grid-template-columns:1fr}.made-copy{position:static}.process{grid-template-columns:1fr 1fr}.process-step:nth-child(2){border-right:0}.process-step:nth-child(-n+2){border-bottom:1px solid #c9cec8}.standard-line{grid-template-columns:repeat(3,1fr)}.standard-step:nth-child(3){border-right:0}.standard-step:nth-child(-n+3){border-bottom:1px solid rgba(255,255,255,.13)}.approach-head{display:block}.approach-head p{margin-top:20px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+    }
+    @media(max-width:720px){
+      .wrap{width:min(100% - 36px,var(--max))}.announcement{display:none}.nav{min-height:auto;padding:14px 0;align-items:flex-start;flex-direction:column;gap:10px}.wordmark{font-size:22px}nav{width:100%;flex-wrap:wrap}nav a{padding:7px 10px 7px 0;margin-right:8px}.hero{min-height:660px}.hero:before{background-image:linear-gradient(90deg,rgba(12,16,13,.94),rgba(12,16,13,.72)),url('doermade-makerspace-hero.png');background-position:62% center}.hero .wrap{padding:76px 0 92px}.hero h1{font-size:clamp(58px,18vw,82px)}.hero .lead{font-size:19px}.routes{margin-top:-36px}.disciplines{grid-template-columns:1fr}.process{grid-template-columns:1fr}.process-step{border-right:0;border-bottom:1px solid #c9cec8}.process-step:last-child{border-bottom:0}.standard-line{grid-template-columns:1fr 1fr}.standard-step:nth-child(2),.standard-step:nth-child(4){border-right:0}.standard-step:nth-child(3){border-right:1px solid rgba(255,255,255,.13)}.standard-step:nth-child(-n+4){border-bottom:1px solid rgba(255,255,255,.13)}.page-elements{grid-template-columns:1fr}.final-inner{display:block}.final-inner .btn{margin-top:26px}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}section{padding:78px 0}
+    }
+  </style>
 </head>
 <body>
-<div class="topline"><div class="wrap"><span>Built for people who do.</span><span>Indiana • USA</span></div></div>
-<header><div class="wrap nav"><a class="brand" href="#top" aria-label="DOERMADE home"><span class="brand-mark"><img src="doermade-logo.png" alt=""></span><span class="brand-word"><span class="brand-doer">DOER</span><span class="brand-made">MADE</span></span></a><nav aria-label="Primary navigation"><a href="#about">What we do</a><a href="#purpose">Why we exist</a><a href="#impact">Our standard</a><a href="#direction">Direction</a><a class="nav-contact" href="#contact">Contact</a></nav></div></header>
-<main id="top">
-<div class="hero-shell"><div class="wrap hero"><div class="hero-copy"><div class="eyebrow">Products • Solutions • Know-how</div><h1>Create more Doers.</h1><p class="lead"><strong>DOERMADE makes doing easier.</strong> We bring together useful products, practical solutions and clear know-how so people can build, fix, maintain, reuse and create with confidence.</p><div class="actions"><a class="cta" href="#about">Discover DOERMADE</a><a class="cta secondary" href="#purpose">Why we exist</a></div></div><aside class="hero-panel" aria-label="The DOERMADE approach"><div class="hero-panel-label">The DOERMADE approach</div><h2>Use what works. Keep it working.</h2><p>Good solutions should make the next step clearer, not more complicated.</p><div class="path"><div class="path-row"><span class="path-num">01</span><span>Find the right product</span></div><div class="path-row"><span class="path-num">02</span><span>Understand how to use it</span></div><div class="path-row"><span class="path-num">03</span><span>Make, fix or maintain</span></div><div class="path-row"><span class="path-num">04</span><span>Keep useful things in use</span></div></div></aside></div></div>
-<section id="about"><div class="wrap about-layout"><div class="about-copy"><div class="section-kicker">What DOERMADE is</div><h2 class="section-title">A company built around capability.</h2><p class="section-intro">We believe people do more when the right product, the right information and the right solution meet at the right time.</p><p>DOERMADE is an Indiana-based company being built to make practical products and solutions easier to find, understand and put to work.</p><p>Sometimes that means a single useful item. Sometimes it means complementary products organized into a better solution. The goal is the same: remove friction between a person and the thing they are trying to accomplish.</p></div><div class="pillars"><article class="pillar"><div class="pillar-icon">P</div><div><h3>Useful products</h3><p>Practical items, materials and components chosen for real-world use—not shelf filler.</p></div></article><article class="pillar"><div class="pillar-icon">S</div><div><h3>Better solutions</h3><p>Products organized together when doing so makes a job simpler, faster, clearer or more reliable.</p></div></article><article class="pillar"><div class="pillar-icon">K</div><div><h3>Clear know-how</h3><p>Useful guidance that helps people understand what they need, why it matters and how to put it to work.</p></div></article></div></div></section>
-<section id="purpose"><div class="wrap"><div class="purpose-head"><div class="section-kicker">Why we exist</div><h2 class="section-title">Build a strong company. Use it to make things better.</h2><p class="section-intro">DOERMADE is being built as a commercial business with a purpose beyond the transaction.</p></div><div class="purpose-grid"><article class="purpose-card large"><div class="number">01 / PURPOSE</div><h3>Create more Doers.</h3><p>Help more people gain the products, knowledge and confidence to build, repair, maintain, reuse, repurpose and create for themselves.</p></article><article class="purpose-card"><div class="number">02 / MISSION</div><h3>Make doing easier.</h3><p>Connect people with useful products, practical solutions and know-how that help them accomplish more and extend the useful life of what they already own.</p></article><article class="purpose-card"><div class="number">03 / VISION</div><h3>Build value that compounds.</h3><p>Grow a trusted, scalable and financially strong company that creates value for customers and measurable good for communities and the environment.</p></article></div></div></section>
-<section id="impact" class="impact"><div class="wrap"><div class="section-kicker">The DOERMADE standard</div><h2 class="section-title">Before something becomes waste, ask what it can become next.</h2><p class="section-intro">The best outcome is not always replacement. We favor keeping useful products, materials and skills in circulation for as long as they still create value.</p><div class="standard-line" aria-label="DOERMADE use hierarchy"><div class="standard-step"><span>01</span><strong>Maintain</strong></div><div class="standard-step"><span>02</span><strong>Repair</strong></div><div class="standard-step"><span>03</span><strong>Reuse</strong></div><div class="standard-step"><span>04</span><strong>Repurpose</strong></div><div class="standard-step"><span>05</span><strong>Recycle</strong></div><div class="standard-step"><span>06</span><strong>Dispose only when necessary</strong></div></div><p class="impact-note">As the business grows, DOERMADE intends to turn this standard into measurable action. Landfill reduction is one early impact area under consideration, with specific goals to be defined as operations develop.</p></div></section>
-<section id="direction"><div class="wrap"><div class="direction-head"><div><div class="section-kicker">Where we're headed</div><h2 class="section-title">Start focused. Build deliberately.</h2></div><p class="direction-note">DOERMADE is being developed in stages. Each expansion should earn its place by solving a real problem and creating measurable value.</p></div><div class="direction-grid"><article class="direction-card" data-step="1"><small>Now</small><h3>Retail & practical solutions</h3><p>Useful products, supplies and organized solutions across practical categories, tested with real customers and disciplined capital.</p></article><article class="direction-card" data-step="2"><small>Next</small><h3>Reuse & refurbishment</h3><p>Programs and products designed to keep useful items and materials in circulation longer instead of replacing them prematurely.</p></article><article class="direction-card" data-step="3"><small>Future</small><h3>B2B services</h3><p>Kitting, packaging, wholesale, fulfillment and lifecycle support built on the same practical operating philosophy.</p></article></div></div></section>
-<section id="contact" class="contact-band"><div class="wrap contact-inner"><div><h2>DOERMADE is getting to work.</h2><p>For company, supplier or business inquiries, contact us directly.</p></div><a class="cta" href="mailto:ghoaks@doermade.com">ghoaks@doermade.com</a></div></section>
-</main>
-<footer><div class="wrap"><div class="footer-grid"><div class="footer-brand"><img src="doermade-logo.png" alt="DOERMADE"><p>Useful products. Practical solutions. Clear know-how. Built to help more people become Doers.</p></div><div><div class="footer-label">Company</div><strong>DOERMADE LLC</strong><br>1222 Liberty St.<br>Covington, IN 47932</div><div><div class="footer-label">Contact</div><a href="mailto:ghoaks@doermade.com">ghoaks@doermade.com</a><br>www.doermade.com</div></div><div class="footer-copy">© 2026 DOERMADE LLC.</div></div></footer>
-</body></html>
+  <div class="announcement">
+    <div class="wrap"><span>DOERMADE LLC · Indiana</span><strong>Create More Doers.</strong></div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="DOERMADE home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span class="wordmark">DOER<span>MADE</span></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#shop">Shop</a>
+        <a href="#learn">Projects &amp; Learn</a>
+        <a href="#about">About</a>
+        <a href="#standard">Impact</a>
+        <a class="contact" href="mailto:ghoaks@doermade.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">Products · Solutions · Know-how</div>
+          <h1>Create More <em>Doers.</em></h1>
+          <p class="lead"><strong>DOERMADE helps people get things done.</strong> Useful products, practical solutions and clear know-how for building, repairing, maintaining, reusing and creating with confidence.</p>
+          <div class="actions">
+            <a class="btn primary" href="#shop">Explore DOERMADE</a>
+            <a class="btn secondary" href="#learn">Projects &amp; Learn</a>
+          </div>
+          <p class="hero-note">The customer is the Doer. Our job is to make the path from “I want to do this” to “I did it” simpler.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="routes" id="shop">
+      <div class="wrap route-grid">
+        <a class="route" href="#products">
+          <small>01 · Products</small>
+          <h2>Shop what helps you do it.</h2>
+          <p>Individual products, supplies and organized kits will appear here as they are released and ready for customers.</p>
+          <span class="arrow">→</span>
+        </a>
+        <a class="route" href="#learn">
+          <small>02 · Knowledge</small>
+          <h2>Projects &amp; Learn</h2>
+          <p>Instructional videos, written steps, downloads, troubleshooting and project resources in one permanent home.</p>
+          <span class="arrow">→</span>
+        </a>
+        <a class="route" href="#about">
+          <small>03 · Company</small>
+          <h2>Why DOERMADE exists.</h2>
+          <p>Purpose, mission, operating philosophy and the standards guiding how we build the company.</p>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <section class="made-for" id="products">
+      <div class="wrap made-grid">
+        <div class="made-copy">
+          <div class="eyebrow">Made for Doers</div>
+          <h2 class="section-title">Doing is bigger than one category.</h2>
+          <p>DOERMADE is being built for people who make, fix, maintain, restore, improve and learn. We are not defining the company by the first product we happen to sell.</p>
+          <p>As real products launch, this section becomes the bridge between what you want to accomplish and what can help you accomplish it.</p>
+        </div>
+        <div class="disciplines" aria-label="DOERMADE project categories">
+          <div class="discipline"><span>Build</span><strong>Wood · Home · Fabrication</strong></div>
+          <div class="discipline"><span>Create</span><strong>Art · Craft · Sewing</strong></div>
+          <div class="discipline"><span>Repair</span><strong>Home · Auto · Everyday</strong></div>
+          <div class="discipline"><span>Restore</span><strong>Furniture · Leather · Gear</strong></div>
+          <div class="discipline"><span>Maintain</span><strong>Tools · Equipment · Spaces</strong></div>
+          <div class="discipline"><span>Learn</span><strong>Projects · Skills · Know-how</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="wrap">
+        <div class="approach-head">
+          <div>
+            <div class="eyebrow">The DOERMADE approach</div>
+            <h2 class="section-title">Make doing easier. Not more complicated.</h2>
+          </div>
+          <p>DOERMADE should reduce friction between a person and the thing they want to accomplish.</p>
+        </div>
+        <div class="process">
+          <div class="process-step"><b>01</b><h3>Start with the goal.</h3><p>What is the Doer trying to build, fix, maintain, reuse or create?</p></div>
+          <div class="process-step"><b>02</b><h3>Find what works.</h3><p>Select useful products and compatible materials instead of adding clutter for its own sake.</p></div>
+          <div class="process-step"><b>03</b><h3>Explain it clearly.</h3><p>Use straightforward instructions, demonstrations and references when knowledge is the missing piece.</p></div>
+          <div class="process-step"><b>04</b><h3>Help the Doer succeed.</h3><p>The outcome matters more than the transaction. A successful project creates a more capable customer.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn" id="learn">
+      <div class="wrap learn-grid">
+        <div>
+          <div class="eyebrow">Projects &amp; Learn</div>
+          <h2 class="section-title">The instruction library belongs to DOERMADE.</h2>
+          <p class="section-intro">A QR code inside a future DOERMADE product should take the customer to a permanent DOERMADE project page — not leave them searching the internet for the right instructions.</p>
+          <p class="section-intro" style="margin-top:18px">Videos can be embedded from a video service while the page itself stays under DOERMADE control. Written steps, downloads, troubleshooting and replacement information can live beside the video.</p>
+        </div>
+        <div class="qr-card">
+          <div class="qr-top">
+            <div>
+              <small>Project page architecture</small>
+              <h3>Scan. Learn. Do.</h3>
+            </div>
+            <div class="fake-qr" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <p>Future project URLs can stay consistent even if the underlying video, instructions or supporting files change.</p>
+          <div class="page-elements">
+            <span>Instructional video</span><span>Written steps</span><span>Tools &amp; materials</span><span>Safety notes</span><span>Troubleshooting</span><span>Downloads &amp; FAQs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="standard" id="standard">
+      <div class="wrap">
+        <div class="eyebrow">The DOERMADE Standard</div>
+        <h2 class="section-title">Keep useful things useful.</h2>
+        <p class="section-intro">A practical hierarchy for products, projects and company decisions. Responsibility should be built into how we operate, not bolted on as marketing language.</p>
+        <div class="standard-line">
+          <div class="standard-step"><span>01</span><strong>Maintain</strong></div>
+          <div class="standard-step"><span>02</span><strong>Repair</strong></div>
+          <div class="standard-step"><span>03</span><strong>Reuse</strong></div>
+          <div class="standard-step"><span>04</span><strong>Repurpose</strong></div>
+          <div class="standard-step"><span>05</span><strong>Recycle</strong></div>
+          <div class="standard-step"><span>06</span><strong>Dispose only when necessary</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <div class="eyebrow">About DOERMADE</div>
+          <h2 class="section-title">A business built around capability.</h2>
+          <p class="section-intro">DOERMADE is an Indiana-based commerce and knowledge company being built around one central idea: create more Doers.</p>
+        </div>
+        <div class="statements">
+          <div class="statement"><small>Purpose</small><strong>Help more people become capable, confident Doers.</strong></div>
+          <div class="statement"><small>Mission</small><strong>Make doing easier.</strong><p>Connect people with useful products, practical solutions and clear know-how so they can build, repair, maintain, reuse, repurpose and create with confidence.</p></div>
+          <div class="statement"><small>Vision</small><strong>Build a trusted, scalable company that helps people accomplish more themselves.</strong><p>Use profitable growth to create measurable value for customers, communities and the environment.</p></div>
+          <div class="statement"><small>Brand promise</small><strong>From “I want to” to “I did.”</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap final-inner">
+        <h2>Build it. Fix it. Maintain it. Create it. <span style="white-space:nowrap">Be the Doer.</span></h2>
+        <a class="btn" href="mailto:ghoaks@doermade.com">Contact DOERMADE</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="wordmark">DOER<span>MADE</span></div>
+          <p>Useful products. Practical solutions. Clear know-how. Built around the people who get things done.</p>
+        </div>
+        <div><div class="footer-label">Explore</div><a href="#shop">Shop</a><a href="#learn">Projects &amp; Learn</a><a href="#about">About</a><a href="#standard">DOERMADE Standard</a></div>
+        <div><div class="footer-label">Contact</div><a href="mailto:ghoaks@doermade.com">ghoaks@doermade.com</a><a href="https://www.doermade.com">www.doermade.com</a></div>
+      </div>
+      <div class="copyright">© 2026 DOERMADE LLC · Covington, Indiana · Create More Doers.</div>
+    </div>
+  </footer>
+</body>
+</html>
